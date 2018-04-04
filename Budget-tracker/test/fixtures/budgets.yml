@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  income: 1.5
+  house: 1.5
+  elec: 1.5
+  credit: 1.5
+  gas: 1.5
+  car: 1.5
+  insur: 1.5
+  water: 1.5
+  money: 1.5
+
+two:
+  income: 1.5
+  house: 1.5
+  elec: 1.5
+  credit: 1.5
+  gas: 1.5
+  car: 1.5
+  insur: 1.5
+  water: 1.5
+  money: 1.5

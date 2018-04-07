@@ -11,185 +11,42 @@ Migrating to CreateBudgets (20180402181148)
   [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-02 18:12:30.490311"], ["updated_at", "2018-04-02 18:12:30.490311"]]
   [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Started GET "/" for 127.0.0.1 at 2018-04-03 19:40:04 -0700
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (16.0ms)
-Completed 200 OK in 139ms (Views: 94.5ms | ActiveRecord: 1.0ms)
-
-
-Started GET "/budgets/new" for 127.0.0.1 at 2018-04-03 19:40:43 -0700
-Processing by BudgetsController#new as HTML
-  Rendering budgets/new.html.erb within layouts/application
-  Rendered budgets/_form.html.erb (40.4ms)
-  Rendered budgets/new.html.erb within layouts/application (65.0ms)
-Completed 200 OK in 174ms (Views: 135.9ms | ActiveRecord: 1.5ms)
-
-
-Started POST "/budgets" for 127.0.0.1 at 2018-04-03 19:41:13 -0700
-Processing by BudgetsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wqzp+GU8dT1M7WeCdAB3yODLTQc+p54sMK35INMNM3AWDWaFjE3PAEbpOnUGLjjYzaHMwT/zaeObmVJAjIatUw==", "budget"=>{"income"=>"5000", "house"=>"500", "elec"=>"500", "credit"=>"500", "gas"=>"500", "car"=>"560", "insur"=>"505", "water"=>"150", "money"=>"300"}, "commit"=>"Create Budget"}
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "budgets" ("income", "house", "elec", "credit", "gas", "car", "insur", "water", "money", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["income", 5000.0], ["house", 500.0], ["elec", 500.0], ["credit", 500.0], ["gas", 500.0], ["car", 560.0], ["insur", 505.0], ["water", 150.0], ["money", 300.0], ["created_at", "2018-04-04 02:41:13.880949"], ["updated_at", "2018-04-04 02:41:13.880949"]]
-  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://localhost:3000/budgets/1
-Completed 302 Found in 22ms (ActiveRecord: 9.5ms)
-
-
-Started GET "/budgets/1" for 127.0.0.1 at 2018-04-03 19:41:13 -0700
-Processing by BudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBudget Load (0.0ms)[0m  [1m[34mSELECT  "budgets".* FROM "budgets" WHERE "budgets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering budgets/show.html.erb within layouts/application
-  Rendered budgets/show.html.erb within layouts/application (1.5ms)
-Completed 200 OK in 98ms (Views: 68.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2018-04-03 19:42:54 -0700
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (3.5ms)
-Completed 200 OK in 99ms (Views: 74.2ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/" for 127.0.0.1 at 2018-04-07 14:34:05 -0700
-  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (32.6ms)
-Completed 200 OK in 178ms (Views: 123.6ms | ActiveRecord: 2.5ms)
-
-
-Started GET "/budgets/1" for 127.0.0.1 at 2018-04-07 14:42:51 -0700
-Processing by BudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT  "budgets".* FROM "budgets" WHERE "budgets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering budgets/show.html.erb within layouts/application
-  Rendered budgets/show.html.erb within layouts/application (1.0ms)
-Completed 200 OK in 107ms (Views: 71.4ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/" for 127.0.0.1 at 2018-04-07 14:55:36 -0700
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (33.6ms)
-Completed 200 OK in 195ms (Views: 141.2ms | ActiveRecord: 1.5ms)
-
-
-Started GET "/budgets/1" for 127.0.0.1 at 2018-04-07 14:55:52 -0700
-Processing by BudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT  "budgets".* FROM "budgets" WHERE "budgets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering budgets/show.html.erb within layouts/application
-  Rendered budgets/show.html.erb within layouts/application (1.5ms)
-Completed 200 OK in 126ms (Views: 86.7ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/budgets" for 127.0.0.1 at 2018-04-07 14:55:54 -0700
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (5.9ms)
-Completed 200 OK in 122ms (Views: 88.6ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/budgets/1" for 127.0.0.1 at 2018-04-07 14:55:56 -0700
-Processing by BudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT  "budgets".* FROM "budgets" WHERE "budgets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering budgets/show.html.erb within layouts/application
-  Rendered budgets/show.html.erb within layouts/application (1.0ms)
-Completed 200 OK in 119ms (Views: 89.1ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/budgets" for 127.0.0.1 at 2018-04-07 14:55:58 -0700
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (1.0ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (5.0ms)
-Completed 200 OK in 116ms (Views: 86.3ms | ActiveRecord: 1.0ms)
-
-
-Started GET "/budgets/1" for 127.0.0.1 at 2018-04-07 14:56:02 -0700
-Processing by BudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT  "budgets".* FROM "budgets" WHERE "budgets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering budgets/show.html.erb within layouts/application
-  Rendered budgets/show.html.erb within layouts/application (1.0ms)
-Completed 200 OK in 121ms (Views: 88.6ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/budgets" for 127.0.0.1 at 2018-04-07 14:56:03 -0700
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (0.0ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (4.5ms)
-Completed 200 OK in 119ms (Views: 88.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/budgets/1" for 127.0.0.1 at 2018-04-07 14:56:06 -0700
-Processing by BudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBudget Load (0.0ms)[0m  [1m[34mSELECT  "budgets".* FROM "budgets" WHERE "budgets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering budgets/show.html.erb within layouts/application
-  Rendered budgets/show.html.erb within layouts/application (1.5ms)
-Completed 200 OK in 114ms (Views: 83.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/budgets" for 127.0.0.1 at 2018-04-07 14:56:08 -0700
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (4.0ms)
-Completed 200 OK in 124ms (Views: 93.6ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/budgets/1" for 127.0.0.1 at 2018-04-07 14:56:09 -0700
-Processing by BudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT  "budgets".* FROM "budgets" WHERE "budgets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering budgets/show.html.erb within layouts/application
-  Rendered budgets/show.html.erb within layouts/application (1.0ms)
-Completed 200 OK in 119ms (Views: 86.1ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/budgets/1/edit" for 127.0.0.1 at 2018-04-07 14:56:11 -0700
-Processing by BudgetsController#edit as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT  "budgets".* FROM "budgets" WHERE "budgets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering budgets/edit.html.erb within layouts/application
-  Rendered budgets/_form.html.erb (45.1ms)
-  Rendered budgets/edit.html.erb within layouts/application (76.7ms)
-Completed 200 OK in 198ms (Views: 165.7ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/budgets" for 127.0.0.1 at 2018-04-07 14:56:13 -0700
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (4.5ms)
-Completed 200 OK in 122ms (Views: 91.7ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/budgets/new" for 127.0.0.1 at 2018-04-07 14:56:17 -0700
-Processing by BudgetsController#new as HTML
-  Rendering budgets/new.html.erb within layouts/application
-  Rendered budgets/_form.html.erb (3.5ms)
-  Rendered budgets/new.html.erb within layouts/application (33.1ms)
-Completed 200 OK in 151ms (Views: 121.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/budgets" for 127.0.0.1 at 2018-04-07 14:56:18 -0700
-Processing by BudgetsController#index as HTML
-  Rendering budgets/index.html.erb within layouts/application
-  [1m[36mBudget Load (0.5ms)[0m  [1m[34mSELECT "budgets".* FROM "budgets"[0m
-  Rendered budgets/index.html.erb within layouts/application (5.0ms)
-Completed 200 OK in 125ms (Views: 88.3ms | ActiveRecord: 0.5ms)
-
-
+Started GET "/index" for 127.0.0.1 at 2018-04-03 20:08:52 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/evanchristensen/.rvm/gems/ruby-2.3.4/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/evanchristensen/.rvm/gems/ruby-2.3.4/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/evanchristensen/.rvm/gems/ruby-2.3.4/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/evanchristensen/.rvm/gems/ruby-2.3.4/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (3.2ms)
+  Rendered /Users/evanchristensen/.rvm/gems/ruby-2.3.4/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.8ms)
+  Rendering /Users/evanchristensen/.rvm/gems/ruby-2.3.4/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/evanchristensen/.rvm/gems/ruby-2.3.4/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.7ms)
+  Rendered /Users/evanchristensen/.rvm/gems/ruby-2.3.4/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (121.6ms)

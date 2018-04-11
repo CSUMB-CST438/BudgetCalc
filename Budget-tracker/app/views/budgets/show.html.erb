@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>House:</strong>
+  <%= @budget.home %>
+</p>
+
+<p>
+  <strong>Elec:</strong>
+  <%= @budget.electric %>
+</p>
+
+<p>
+  <strong>Credit:</strong>
+  <%= @budget.creditc %>
+</p>
+
+<p>
+  <strong>Gas:</strong>
+  <%= @budget.gasoline %>
+</p>
+
+<p>
+  <strong>Car:</strong>
+  <%= @budget.truck %>
+</p>
+
+<p>
+  <strong>Insur:</strong>
+  <%= @budget.insurance %>
+</p>
+
+<p>
+  <strong>Water:</strong>
+  <%= @budget.watering %>
+</p>
+
+<p>
+  <strong>Money:</strong>
+  <%= @budget.spending %>
+</p>
+
+<%= link_to 'Edit', edit_budget_path(@budget) %> |
+<%= link_to 'Back', budgets_path %>

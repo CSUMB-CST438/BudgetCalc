@@ -1,0 +1,62 @@
+<%= form_for(budget) do |f| %>
+  <% if budget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
+
+      <ul>
+      <% budget.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :income %>
+    <%= f.text_field :income %>
+  </div>
+
+  <div class="field">
+    <%= f.label :house %>
+    <%= f.text_field :house %>
+  </div>
+
+  <div class="field">
+    <%= f.label :elec %>
+    <%= f.text_field :elec %>
+  </div>
+
+  <div class="field">
+    <%= f.label :credit %>
+    <%= f.text_field :credit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gas %>
+    <%= f.text_field :gas %>
+  </div>
+
+  <div class="field">
+    <%= f.label :car %>
+    <%= f.text_field :car %>
+  </div>
+
+  <div class="field">
+    <%= f.label :insur %>
+    <%= f.text_field :insur %>
+  </div>
+
+  <div class="field">
+    <%= f.label :water %>
+    <%= f.text_field :water %>
+  </div>
+
+  <div class="field">
+    <%= f.label :money %>
+    <%= f.text_field :money %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

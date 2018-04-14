@@ -1,3 +1,5 @@
+#MVC Design Pattern Controller
+
 class BudgetsController < ApplicationController
   before_action :set_budget, only: [:show, :edit, :update, :destroy]
 

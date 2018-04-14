@@ -2,11 +2,14 @@
 
 class BudgetsController < ApplicationController
   before_action :set_budget, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :index]
 
   # GET /budgets
   # GET /budgets.json
   def index
-    @budgets = Budget.all
+    if current_user
+      @budgets = current_user.budgets
+    end
   end
 
   # GET /budgets/1
@@ -27,7 +30,7 @@ class BudgetsController < ApplicationController
   # POST /budgets.json
   def create
     @budget = Budget.new(budget_params)
-
+    @budget.user_id = current_user.id
     respond_to do |format|
       if @budget.save
         format.html { redirect_to @budget, notice: 'Budget was successfully created.' }

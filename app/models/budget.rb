@@ -4,7 +4,9 @@ class Budget < ApplicationRecord
 
 	#MVC Design pattern for model
 
-	#percentage for budget. 
+	#percentage for budget.
+
+	belongs_to :user 
 
 	def home
 		self.house / self.income * 100

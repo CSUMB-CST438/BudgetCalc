@@ -9,40 +9,48 @@ class Budget < ApplicationRecord
 	belongs_to :user 
 
 	def home
-		self.house / self.income * 100
+		(self.house / self.income * 100).round(2)
 	end
 
 	def electric
-		self.elec / self.income * 100
+		(self.elec / self.income * 100).round(2)
 	end
 
 	def creditc
-		self.credit / self.income * 100
+		(self.credit / self.income * 100).round(2)
 	end
 
 	def gasoline
-		self.gas / self.income * 100
+		(self.gas / self.income * 100).round(2)
 	end
 
 	def truck
-		self.car / self.income * 100
+		(self.car / self.income * 100).round(2)
 	end
 
 	def insurance
-		self.insur / self.income* 100 
+		(self.insur / self.income* 100).round(2)
 	end
 
 	def watering
-		self.water / self.income * 100
+		(self.water / self.income * 100).round(2)
 	end
 
 	def spending
-		self.money / self.income  * 100
+		(self.money / self.income  * 100).round(2)
 	end
+#Cash remaining
+	def rem
+		self.income - (self.elec + self.house + self.credit + self.gas + self.car + self.insur + self.water + self.money)
+	end		
 
-	#Cash remaining 
+	#Cash remaining percentage if any
 	def leftovers
-		(self.income - self.elec - self.home - self.credit - self.gas - self.truck - self.insur - self.water - self.money) / self.income * 100
+		if rem > 0
+		(rem / self.income * 100).round(2)
+		else
+		0 
+		end
 	end
 
 	#for pie chart

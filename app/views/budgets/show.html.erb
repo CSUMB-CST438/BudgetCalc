@@ -1,53 +1,57 @@
 <p id="notice"><%= notice %></p>
-
+<%#Income and expense amounts and percentages displayed%>
 <p>
   <strong>House:</strong>
   <%= @budget.home %>
-  %
+  % ($ <%= sprintf("%.2f",(@budget.house)) %>)
 </p>
 
 <p>
   <strong>Elec:</strong>
   <%= @budget.electric %>
-  %
+  % ($ <%= sprintf("%.2f",(@budget.elec)) %>)
 </p>
 
 <p>
   <strong>Credit:</strong>
   <%= @budget.creditc %>
-  %
+  % ($ <%= sprintf("%.2f",(@budget.credit)) %>)
 </p>
 
 <p>
   <strong>Gas:</strong>
   <%= @budget.gasoline %>
-  %
+  % ($ <%= sprintf("%.2f",(@budget.gas)) %>)
 </p>
 
 <p>
   <strong>Car:</strong>
   <%= @budget.truck %>
-  %
+  % ($ <%= sprintf("%.2f",(@budget.car)) %>)
 </p>
 
 <p>
   <strong>Insur:</strong>
   <%= @budget.insurance %>
-  %
+  % ($ <%= sprintf("%.2f",(@budget.insur)) %>)
 </p>
 
 <p>
   <strong>Water:</strong>
   <%= @budget.watering %>
-  %
+  % ($ <%= sprintf("%.2f",(@budget.water)) %>)
 </p>
 
 <p>
   <strong>Money:</strong>
   <%= @budget.spending %>
-  %
+  % ($ <%= sprintf("%.2f",(@budget.money)) %>)
 </p>
-
+<%# Income displayed for reference %>
+<p>
+  <strong>Your Income:</strong>
+  ($ <%= sprintf("%.2f",(@budget.income)) %>)
+</p>
 
 <%= pie_chart @budget.budget_graph %>
 

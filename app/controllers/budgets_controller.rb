@@ -32,9 +32,16 @@ class BudgetsController < ApplicationController
     @budget = Budget.new(budget_params)
     @budget.user_id = current_user.id
     respond_to do |format|
-      if @budget.save
+      if @budget.save 
+        # income less than expenses
+        if @budget.rem < 0
+        format.html { redirect_to budgets_url, notice: 'Budget was successfully created, but income is less than expenses.' }
+        format.json { render :show, status: :created, location: @budget}
+        #income below expense(Normal)
+        else @budget.save
         format.html { redirect_to @budget, notice: 'Budget was successfully created.' }
         format.json { render :show, status: :created, location: @budget }
+        end
       else
         format.html { render :new }
         format.json { render json: @budget.errors, status: :unprocessable_entity }
@@ -46,9 +53,14 @@ class BudgetsController < ApplicationController
   # PATCH/PUT /budgets/1.json
   def update
     respond_to do |format|
-      if @budget.update(budget_params)
+      if @budget.update(budget_params) # income less than expenses
+        if @budget.rem < 0
+        format.html { redirect_to budgets_url, notice: 'Budget was successfully updated, but income is less than expenses.' }
+        format.json { render :show, status: :created, location: @budget}
+        else
         format.html { redirect_to @budget, notice: 'Budget was successfully updated.' }
         format.json { render :show, status: :ok, location: @budget }
+        end
       else
         format.html { render :edit }
         format.json { render json: @budget.errors, status: :unprocessable_entity }

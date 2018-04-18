@@ -15,6 +15,10 @@ class BudgetsController < ApplicationController
   # GET /budgets/1
   # GET /budgets/1.json
   def show
+    # Service Object Design Pattern
+    # invokes ChartService Service class with the budget
+    # the budget data for the chart is returned by the service.
+    @budget_chart = ChartService.new(@budget).get_chart_data
   end
 
   # GET /budgets/new

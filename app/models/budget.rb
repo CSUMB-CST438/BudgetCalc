@@ -44,10 +44,4 @@ class Budget < ApplicationRecord
 	def leftovers
 		(self.income - self.elec - self.home - self.credit - self.gas - self.truck - self.insur - self.water - self.money) / self.income * 100
 	end
-
-	#for pie chart
-	def budget_graph
-		{"Home": self.home, "Electric": self.electric, "Credit Card": self.creditc, "Gas": self.gasoline, "Truck": self.truck,
-			"Insurance": self.insurance, "Water": self.watering, "Spending": self.spending, "Remaining": self.leftovers}
-	end
 end

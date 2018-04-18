@@ -1,10 +1,21 @@
 BudgetCalc is a personal monthly budget tracker using ruby on rails. 
 
-Design Pattern: MVC
+Design Pattern: 
+
+	MVC:
 
 	Model location: 		BudgetCalc/models
 	View location:			BudgetCalc/views/budgets
 	Controller location:	BudgetCalc/app/conrillers
+
+	Service Pattern(EVAN):
+
+	budgets_controller
+	budget.rb
+	app/services/chart_service
+	views/budgets/show.html.erb
+
+
 
 Instuctions For EC2 instance:
 
